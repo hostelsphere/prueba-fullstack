@@ -20,9 +20,8 @@ subir a un repositorio publico y compartir el link
 - crear una tabla en postgres llamada logs
 - insertar los datos de prueba en sql (mock_logs.sql)
 - crear vista llamada view_realtime_logs
-    - debe contemplar los ultimos logs de cada tipo y combinacion de propiedad/servicio/tarea, para poder revisarlos
+    - debe obtener los ultimos logs de cada tipo y combinacion de property/service/tarea
 - crear script que consuma la vista 
-    - filtrar por los registros si el task=register_diary por status = FAIL, sino por status=(FAIL, WARN)
-    - enviar alerta via api
-        POST https://endpoint.com 
+    - analizar los registros con las siguientes condiciones: si el task=register_diary filtrar por status = FAIL, de lo contrario, por status=(FAIL, WARN)
+    - enviar alerta via api haciendo un post al webhook de Google Chat GOOGLE_CHAT_WEBHOOK_URL
     

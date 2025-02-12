@@ -1,0 +1,22 @@
+services:
+  db:
+      image: postgres:16.3
+      container_name: test-db
+      restart: always
+      ports:
+          - ${POSTGRES_PORT}:${POSTGRES_PORT}
+      environment:
+          POSTGRES_USER: ${POSTGRES_USER}
+          POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+          POSTGRES_DB: ${POSTGRES_DB}
+      networks:
+          - monitoring_default
+      volumes:
+          - postgres_data:/var/lib/postgresql/data
+
+networks:
+  monitoring_default:
+      driver: bridge
+
+volumes:
+  postgres_data:
