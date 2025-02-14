@@ -1,27 +1,18 @@
-## Frontend
+# Prueba Técnica Fullstack
 
-### Objetivo: 
-- Copiar diseño exacto de la encuesta del archivo (frontend_diseño.png).
+## Descripción
+Bienvenido/a a la prueba técnica para el rol de desarrollador/a fullstack. La prueba consta de dos etapas, una para el frontend y otra para el backend, cada una con sus respectivas instrucciones en los archivos `README.md` dentro de las carpetas correspondientes.
 
-### Requisitos:
-- react
-- tailwind
-- typescript
+## Duración
+Tienes **1 hora y 15 minutos** para completar el desafío.
 
-### Consideraciones:
-mockear los datos de resultados
+## Instrucciones
+1. **Clona el repositorio** en tu máquina local.
+2. Dentro del proyecto encontrarás dos carpetas principales:
+   - **`frontend/`**: Contiene la primera etapa del desafío. Consulta el `README.md` dentro de esta carpeta para más detalles.
+   - **`backend/`**: Contiene la segunda etapa del desafío. Consulta el `README.md` dentro de esta carpeta para más detalles.
+3. Realiza las implementaciones necesarias según las instrucciones de cada etapa.
+4. Una vez finalizado, **sube tu código y crea un Pull Request** en este repositorio.
 
-### Entregable:
-subir a un repositorio publico y compartir el link
+¡Buena suerte! 🚀
 
-## Backend
-
-### Procedimiento:
-- crear una tabla en postgres llamada logs
-- insertar los datos de prueba en sql (mock_logs.sql)
-- crear vista llamada view_realtime_logs
-    - debe obtener los ultimos logs de cada tipo y combinacion de property/service/tarea
-- crear script que consuma la vista 
-    - analizar los registros con las siguientes condiciones: si el task=register_diary filtrar por status = FAIL, de lo contrario, por status=(FAIL, WARN)
-    - enviar alerta via api haciendo un post al webhook de Google Chat GOOGLE_CHAT_WEBHOOK_URL
-    
