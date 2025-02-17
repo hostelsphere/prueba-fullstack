@@ -25,27 +25,21 @@ const run = async () => {
 
     const responseProperties = fs.readFileSync('prisma/mock_properties.json', 'utf8');
     const properties: Property[] = JSON.parse(responseProperties);
-  
-    for (const property of properties) {
-      await prisma.generalProperty.create({
-        data: {
-          id: property.id,
-          name: property.name
-        }
-      });
-    }
 
-    for (const log of logs) {
-      await prisma.monitoringLog.create({
-        data: {
-          id: log.id,
-          service: log.service,
-          task: log.task,
-          property_id: log.property_id,
-          datetime: new Date(log.datetime),
-          status: log.status
-        }
-      });
+    await prisma.generalProperty.createMany({
+        data: properties,
+        skipDuplicates: true
+    })
+
+    for (let i = 0; i < logs.length; i += 2000) {
+        const data = logs.slice(i, i + 1000).map((r) => ({ ...r, datetime: new Date(r.datetime) }));
+
+        await prisma.monitoringLog.createMany({
+            data,
+            skipDuplicates: true
+        });
+
+        console.log(`saving ${((i / logs.length) * 100).toFixed(2)}%`)
     }
   } catch (error) {
     console.error(error);
