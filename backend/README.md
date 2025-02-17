@@ -184,7 +184,7 @@ Para garantizar una integración ordenada de tus cambios, sigue estos pasos:
 
 4. **Abre una Pull Request**
 
-   Ingresa a la plataforma de Git (GitHub, GitLab, Bitbucket, etc.) y crea una Pull Request comparando tu rama con la rama principal. En la descripción de la PR, incluye:
+   Ingresa a la plataforma GitHub y crea una Pull Request comparando tu rama con la rama principal. En la descripción de la PR, incluye:
    - **Resumen de los cambios:** Explica brevemente la funcionalidad implementada.
    - **Instrucciones de prueba:** Indica cómo ejecutar la aplicación y las pruebas unitarias.
    - **Notas técnicas:** Destaca cualquier decisión o aspecto relevante de tu desarrollo.
@@ -202,8 +202,7 @@ En este proyecto, **orientado a objetos**, deberás demostrar habilidades en **p
 El flujo general es el siguiente:
 
 1. **Crear una vista llamada `view_realtime_logs`** en el schema `monitoring`.
-   - Esta vista debe mostrar los últimos logs de cada combinación única de `property/service/task`.
-   - Sirve para monitorear el estado actual de cada tarea.
+   - Esta vista debe mostrar los últimos logs de cada combinación única de `property/service/task`. Sirve para monitorear el estado actual de cada tarea.
 
 2. **Diseñar un conjunto de clases** que:
    - Consulten la vista `view_realtime_logs`.
@@ -211,9 +210,8 @@ El flujo general es el siguiente:
      - Si `task = 'register_diary'`, filtra los logs con `status = 'FAIL'`.
      - Para cualquier otro valor de `task`, filtra los logs con `status` en `(FAIL, WARN)`.
 
-3. **Enviar alertas** vía API haciendo un `POST` al webhook de Google Chat (utilizando `GOOGLE_CHAT_WEBHOOK_URL`).
-   - La alerta debe incluir información relevante de cada registro. **Es obligatorio** obtener el **nombre de la propiedad** desde la relación `GeneralProperty` (foreign key `property_id`) y mostrarlo en el mensaje.
-   - Por ejemplo, en tu clase `AlertService`, podrías construir el mensaje con el `property.name`, el `service`, el `task`, el `status` y la `datetime`.
+3. **Enviar alertas** vía API haciendo un `POST` al webhook de Google Chat (utilizando `GOOGLE_CHAT_WEBHOOK_URL`, busca un ejemplo sencillo en internet).
+   - La alerta debe incluir información relevante de cada registro. **Es obligatorio** que el nombre de la propiedad se muestre en el mensaje.
 
 4. **Pruebas unitarias con Jest**:
    - Debes crear una prueba que valide el correcto funcionamiento del envio de alertas. Se recomienda el uso de mocks.
