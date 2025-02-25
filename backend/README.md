@@ -32,18 +32,21 @@ Antes de comenzar, asegúrate de tener instalados los siguientes programas:
 
 ## ⚙️ Configuración del Proyecto
 
-1. **Clona el repositorio:**
+1. **Haz un fork del repositorio:**
+   - Accede al repositorio en GitHub y haz clic en el botón "Fork" para crear una copia del repositorio en tu cuenta.
+
+2. **Clona el repositorio desde tu fork:**
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
+   git clone <URL_DE_TU_FORK>
    cd <nombre-del-proyecto>
    ```
 
-2. **Instala las dependencias:**
+3. **Instala las dependencias:**
    ```bash
    bun install
    ```
 
-3. **Configura las variables de entorno:**
+4. **Configura las variables de entorno:**
    - Copia el archivo `.env.example` y renómbralo como `.env`:
      ```bash
      cp .env.example .env
@@ -61,7 +64,7 @@ Antes de comenzar, asegúrate de tener instalados los siguientes programas:
      GOOGLE_CHAT_WEBHOOK_URL=https://chat.googleapis.com/v1/spaces/.../messages?key=...&token=...
      ```
 
-4. **Levanta la base de datos con Docker Compose:**
+5. **Levanta la base de datos con Docker Compose:**
    ```bash
    docker-compose up -d
    ```
@@ -210,7 +213,7 @@ El flujo general es el siguiente:
      - Si `task = 'register_diary'`, filtra los logs con `status = 'FAIL'`.
      - Para cualquier otro valor de `task`, filtra los logs con `status` en `(FAIL, WARN)`.
 
-3. **Enviar alertas** vía API haciendo un `POST` al webhook de Google Chat (utilizando `GOOGLE_CHAT_WEBHOOK_URL`, busca un ejemplo sencillo en internet).
+3. **Enviar alertas** vía API haciendo un `POST` al webhook de Google Chat (utilizando `GOOGLE_CHAT_WEBHOOK_URL`, busca un ejemplo sencillo en internet o utiliza la documentacion: https://developers.google.com/workspace/chat/messages-overview?hl=es-419).
    - La alerta debe incluir información relevante de cada registro. **Es obligatorio** que el nombre de la propiedad se muestre en el mensaje.
 
 4. **Pruebas unitarias con Jest**:
