@@ -167,32 +167,36 @@ Aquí tienes el apartado de entrega con el punto 2 reformulado:
 
 Para garantizar una integración ordenada de tus cambios, sigue estos pasos:
 
-1. **Crea una nueva rama antes de iniciar el desarrollo**
+1. **Evaluador**
+
+   Agrega como colaborador a tu repositorio al usuario backendred@hostelsphere.com
+
+2. **Crea una nueva rama antes de iniciar el desarrollo**
 
    Partiendo de la rama principal (`main` o `master`), crea una rama específica para tu trabajo. Esto asegura que tus cambios queden aislados y facilita la revisión. Por ejemplo:
    ```bash
    git checkout -b feature/alert-service-implementation
    ```
 
-2. **Realiza commits representativos durante el desarrollo de la prueba**
+3. **Realiza commits representativos durante el desarrollo de la prueba**
 
    Dado que se trata de una prueba técnica, no es necesario hacer numerosos commits. Sin embargo, te recomendamos registrar aquellos puntos clave o hitos importantes con un mensaje claro que resuma el avance o la decisión técnica tomada.
 
-3. **Sube tus cambios al repositorio remoto**
+4. **Sube tus cambios al repositorio remoto**
 
    Una vez que hayas completado tu solución y verificado su correcto funcionamiento, envía tus cambios:
    ```bash
    git push origin feature/alert-service-implementation
    ```
 
-4. **Abre una Pull Request**
+5. **Abre una Pull Request**
 
    Ingresa a la plataforma GitHub y crea una Pull Request comparando tu rama con la rama principal. En la descripción de la PR, incluye:
    - **Resumen de los cambios:** Explica brevemente la funcionalidad implementada.
    - **Instrucciones de prueba:** Indica cómo ejecutar la aplicación y las pruebas unitarias.
    - **Notas técnicas:** Destaca cualquier decisión o aspecto relevante de tu desarrollo.
 
-5. **Atiende el feedback**
+6. **Atiende el feedback**
 
    Durante la revisión, es posible que recibas comentarios o solicitudes de ajuste. Realiza las modificaciones necesarias y actualiza la PR hasta obtener la aprobación final.
 
