@@ -32,21 +32,12 @@ Antes de comenzar, asegúrate de tener instalados los siguientes programas:
 
 ## ⚙️ Configuración del Proyecto
 
-1. **Haz un fork del repositorio:**
-   - Accede al repositorio en GitHub y haz clic en el botón "Fork" para crear una copia del repositorio en tu cuenta.
-
-2. **Clona el repositorio desde tu fork:**
-   ```bash
-   git clone <URL_DE_TU_FORK>
-   cd <nombre-del-proyecto>
-   ```
-
-3. **Instala las dependencias:**
+1. **Instala las dependencias:**
    ```bash
    bun install
    ```
 
-4. **Configura las variables de entorno:**
+2. **Configura las variables de entorno:**
    - Copia el archivo `.env.example` y renómbralo como `.env`:
      ```bash
      cp .env.example .env
@@ -64,7 +55,7 @@ Antes de comenzar, asegúrate de tener instalados los siguientes programas:
      GOOGLE_CHAT_WEBHOOK_URL=https://chat.googleapis.com/v1/spaces/.../messages?key=...&token=...
      ```
 
-5. **Levanta la base de datos con Docker Compose:**
+3. **Levanta la base de datos con Docker Compose:**
    ```bash
    docker-compose up -d
    ```
@@ -156,49 +147,6 @@ Una vez configurado, ejecuta el proyecto con:
 ```bash
 bun run start
 ```
-
----
-
-Aquí tienes el apartado de entrega con el punto 2 reformulado:
-
----
-
-## 🚀 Entrega del Proyecto
-
-Para garantizar una integración ordenada de tus cambios, sigue estos pasos:
-
-1. **Evaluador**
-
-   Agrega como colaborador a tu repositorio al usuario backendred@hostelsphere.com
-
-2. **Crea una nueva rama antes de iniciar el desarrollo**
-
-   Partiendo de la rama principal (`main` o `master`), crea una rama específica para tu trabajo. Esto asegura que tus cambios queden aislados y facilita la revisión. Por ejemplo:
-   ```bash
-   git checkout -b feature/alert-service-implementation
-   ```
-
-3. **Realiza commits representativos durante el desarrollo de la prueba**
-
-   Dado que se trata de una prueba técnica, no es necesario hacer numerosos commits. Sin embargo, te recomendamos registrar aquellos puntos clave o hitos importantes con un mensaje claro que resuma el avance o la decisión técnica tomada.
-
-4. **Sube tus cambios al repositorio remoto**
-
-   Una vez que hayas completado tu solución y verificado su correcto funcionamiento, envía tus cambios:
-   ```bash
-   git push origin feature/alert-service-implementation
-   ```
-
-5. **Abre una Pull Request**
-
-   Ingresa a la plataforma GitHub y crea una Pull Request comparando tu rama con la rama principal. En la descripción de la PR, incluye:
-   - **Resumen de los cambios:** Explica brevemente la funcionalidad implementada.
-   - **Instrucciones de prueba:** Indica cómo ejecutar la aplicación y las pruebas unitarias.
-   - **Notas técnicas:** Destaca cualquier decisión o aspecto relevante de tu desarrollo.
-
-6. **Atiende el feedback**
-
-   Durante la revisión, es posible que recibas comentarios o solicitudes de ajuste. Realiza las modificaciones necesarias y actualiza la PR hasta obtener la aprobación final.
 
 ## 📝 Desafío Técnico
 
